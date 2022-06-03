@@ -1,4 +1,3 @@
-
 import {
   createUserWithEmailAndPassword,
   deleteUser,
@@ -19,11 +18,7 @@ export const startLoginEmailPassword = (email, password) => {
     signInWithEmailAndPassword(auth, email, password)
       .then(({ user }) => {
         dispatch(login(user.uid, user.displayName));
-        Swal.fire(
-          "Inicio Sesión!",
-          user.displayName,
-          "success"
-        );
+        Swal.fire("Inicio Sesión!", user.displayName, "success");
       })
       .catch((error) => {
         console.log(error);
@@ -47,11 +42,7 @@ export const startGoogleLogin = () => {
     signInWithPopup(auth, google)
       .then(({ user }) => {
         dispatch(login(user.uid, user.displayName));
-        Swal.fire(
-          "Inicio Sesión!",
-          user.displayName,
-          "success"
-        );
+        Swal.fire("Inicio Sesión!", user.displayName, "success");
       })
       .catch((error) => {
         console.log(error);
@@ -59,7 +50,6 @@ export const startGoogleLogin = () => {
       });
   };
 };
-
 
 // Sign up with email and password
 export const startSignUpEmailPassword = (email, password, name) => {

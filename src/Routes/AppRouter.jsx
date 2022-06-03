@@ -1,12 +1,12 @@
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Detail from "../Components/Detail";
 import Home from "../Components/Home";
 import Login from "../Components/Login";
 import SignUp from "../Components/SignUp";
 import { PrivateRoutes } from "./PrivateRoutes";
 import { PublicRoutes } from "./PublicRoutes";
-
 
 const AppRouter = () => {
   const [checking, setChecking] = useState(true);
@@ -48,21 +48,21 @@ const AppRouter = () => {
           }
         />
         <Route
-          path="/home"
+          path="/characters"
           element={
             <PrivateRoutes isAuth={isLoggedIn}>
               <Home />
             </PrivateRoutes>
           }
         />
-        {/* <Route
-          path="/characters/:id"
+        <Route
+          path="/character/:id"
           element={
             <PrivateRoutes isAuth={isLoggedIn}>
-              <MovieDetail />
+              <Detail />
             </PrivateRoutes>
           }
-        /> */}
+        />
       </Routes>
     </BrowserRouter>
   );

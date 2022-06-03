@@ -36,14 +36,20 @@ const Login = () => {
       >
         {({ isValid }) => (
           <Form>
-            <Field type="email" name="email" placeholder="Email" />
+            <Field
+              type="email"
+              name="email"
+              placeholder="Email"
+            />
             <ErrorMessage name="email" component="span" className="error" />
-            <Field type="password" name="password" placeholder="Password" />
+            <Field
+              type="password"
+              name="password"
+              placeholder="Password"
+            />
             <ErrorMessage name="password" component="span" className="error" />
-            <button
-              type="submit"
-              disabled={!isValid}
-            >
+            <button 
+            type="submit" disabled={!isValid}>
               Ingresar
             </button>
             <button
