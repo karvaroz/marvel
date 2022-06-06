@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { GetDataById } from "../Helpers/GetData";
+import { GetDataById } from "../../Helpers/GetData";
+
 
 const Detail = () => {
   const params = useParams();
